@@ -3,18 +3,16 @@ import re
 import datetime
 
 
-regex_title_match = '.*?<title.*?>(.+?)</title>'
-pattern = re.compile(regex_title_match)
-
-
-row = {}
-row['response_time'] = None
-row['error_code'] = None
-row['content_found'] = False
-row['time_stamp'] = datetime.datetime.utcnow().strftime("%m/%d/%Y, %H:%M:%S")
-
-
 def check(website, website_title):
+	regex_title_match = '.*?<title.*?>(.+?)</title>'
+	pattern = re.compile(regex_title_match)
+
+	row = {}
+	row['response_time'] = None
+	row['error_code'] = None
+	row['content_found'] = False
+	row['time_stamp'] = datetime.datetime.utcnow().strftime("%m/%d/%Y, %H:%M:%S")
+
 	try:
 
 		response = requests.get(website)

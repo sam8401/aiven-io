@@ -8,7 +8,7 @@ from kafka import KafkaAdminClient
 
 
 def main():
-    # Create 'my-topic' Kafka topic
+    # Create Kafka topic
     try:
         admin = KafkaAdminClient(bootstrap_servers=kafka_host, 
             security_protocol="SSL",
@@ -29,7 +29,7 @@ def main():
         Consumer()
     ]
 
-    # Start threads of a publisher/producer and a subscriber/consumer to 'my-topic' Kafka topic
+    # Start threads of a publisher/producer and a subscriber/consumer to Kafka topic
     for t in tasks:
         t.start()
 

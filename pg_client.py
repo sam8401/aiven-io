@@ -20,7 +20,6 @@ def table_exists(conn, table_name):
 
 
 def create_table(conn, table_name):
-
 	if table_exists(conn, table_name) == False:
 
 		create_query = "CREATE TABLE %s \
@@ -36,20 +35,19 @@ def create_table(conn, table_name):
 		conn.commit()
 		cur.close()
 	else:
-
 		print('Table already exists!')
 
 
 def insert_row(conn, table_name, dict):
 	insert_query = "INSERT INTO %s values ('%s', '%s', '%s', '%s');"\
-	% (table_name, dict.get('time_stamp'), dict.get('response_time'),\
-		dict.get('error_code'), dict.get('content_found'))
-
+	% (table_name, dict.get('time_stamp'),\
+		dict.get('response_time'),\
+		dict.get('error_code'),\
+		dict.get('content_found'))
 
 	cur = conn.cursor()
 	cur.execute(insert_query)
 	conn.commit()
-
 
 
 def drop_table(conn, table_name):

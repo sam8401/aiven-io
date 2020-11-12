@@ -8,10 +8,7 @@ POSTGRES_DB = 'metrics'
 POSTGRES_USER = 'avnadmin'
 POSTGRES_PWD = 'u69rl0w70ou16ipg'
 POSTGRES_PORT = '12536'
-
-
 METRICS_TABLE = 'aiven_metrics'
-
 
 #Kafka details
 KAFKA_HOST = 'sam-kafka-ece-8ede.aivencloud.com:12538'

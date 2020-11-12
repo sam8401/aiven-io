@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 # source -> https://github.com/dpkp/kafka-python/blob/master/example.py
 import threading, time
 from kafka import KafkaProducer
@@ -25,7 +24,7 @@ class Producer(threading.Thread):
     
         while not self.stop_event.is_set():
 
-            # Call website_checker.check() here and pass the dict result to consumer
+            # Suman: TODO: Call website_checker.check() here and pass the dict result to consumer
 
             producer.send(TOPIC, b"test")
             time.sleep(1)
