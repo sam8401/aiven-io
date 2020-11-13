@@ -13,4 +13,11 @@ $aiv (or  $source <python-envs-root-folder>/aiv_env/bin/activate)
 $pip install -r requirements.txt
 
 
-$python test_script.py
+# Test website_check metric being pushed to Postgres
+$python test_script.py 
+
+# Test website_check metrics pushed to Kafka
+$python main_script.py 
+
+
+Pending - Integration of all three
