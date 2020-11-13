@@ -2,7 +2,7 @@ from literals import KAFKA_HOST, CA_FILE, CERT_FILE, KEY_FILE, TOPIC
 from producer import Producer
 from consumer import Consumer
 
-
+import threading, time
 from kafka.admin import NewTopic
 from kafka import KafkaAdminClient
 
@@ -10,7 +10,7 @@ from kafka import KafkaAdminClient
 def main():
     # Create Kafka topic
     try:
-        admin = KafkaAdminClient(bootstrap_servers=kafka_host, 
+        admin = KafkaAdminClient(bootstrap_servers=KAFKA_HOST, 
             security_protocol="SSL",
             ssl_cafile=CA_FILE,
             ssl_certfile=CERT_FILE,

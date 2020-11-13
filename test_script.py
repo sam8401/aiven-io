@@ -2,11 +2,9 @@ from website_checker import check
 from pg_client import *
 from literals import *
 
-
 result = check(WEBSITE, WEBSITE_TITLE)
 
 conn_string = "dbname=%s user=%s password='%s' host=%s port=%s" % (POSTGRES_DB, POSTGRES_USER, POSTGRES_PWD, POSTGRES_HOST, POSTGRES_PORT)
-
 
 c = get_connection(conn_string)
 
