@@ -2,7 +2,6 @@ import requests
 import re
 import datetime
 
-
 def check(website, website_title):
 	regex_title_match = '.*?<title.*?>(.+?)</title>'
 	pattern = re.compile(regex_title_match)
@@ -14,7 +13,6 @@ def check(website, website_title):
 	row['time_stamp'] = datetime.datetime.utcnow().strftime("%m/%d/%Y, %H:%M:%S")
 
 	try:
-
 		response = requests.get(website)
 		row['response_time'] = response.elapsed.total_seconds()
 

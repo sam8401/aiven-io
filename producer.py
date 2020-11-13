@@ -1,14 +1,12 @@
-#!/usr/bin/env python
 # source -> https://github.com/dpkp/kafka-python/blob/master/example.py
 
 import json
 import threading, time
+
 from kafka import KafkaProducer
 from literals import KAFKA_HOST, CA_FILE, CERT_FILE, KEY_FILE, TOPIC
 from literals import WEBSITE as website, WEBSITE_TITLE as title
 from website_checker import check
-
-
 
 class Producer(threading.Thread):
     def __init__(self):

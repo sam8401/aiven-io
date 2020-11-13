@@ -1,6 +1,5 @@
 import psycopg2
 
-
 def get_connection(conn_string):
 	try:
 		conn = psycopg2.connect(conn_string)
@@ -51,7 +50,6 @@ def insert_row(conn, table_name, dict):
 
 
 def drop_table(conn, table_name):
-
 	cur = conn.cursor()
 	drop_query = "DROP TABLE %s;" % table_name
 

@@ -1,11 +1,10 @@
-#!/usr/bin/env python
-
 # source -> https://github.com/dpkp/kafka-python/blob/master/example.py
+
 import json
 import threading, time
+
 from kafka import KafkaConsumer
 from literals import KAFKA_HOST, CA_FILE, CERT_FILE, KEY_FILE, TOPIC
-
 
 class Consumer(threading.Thread):
     def __init__(self):

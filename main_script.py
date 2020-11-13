@@ -1,14 +1,13 @@
+import threading, time
+
 from literals import KAFKA_HOST, CA_FILE, CERT_FILE, KEY_FILE, TOPIC
 from producer import Producer
 from consumer import Consumer
 
-import threading, time
 from kafka.admin import NewTopic
 from kafka import KafkaAdminClient
 
-
 def main():
-    # Create Kafka topic
     try:
         admin = KafkaAdminClient(bootstrap_servers=KAFKA_HOST, 
             security_protocol="SSL",
